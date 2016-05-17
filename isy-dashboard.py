@@ -79,12 +79,30 @@ def toggle(group, name):
         time.sleep(sleep)
         return redirect('/isy/' + group + '/', code = 302)
 
-# The if/elif statements will need to be updated to use the group names called by your html toggle function
+def light_off(switch):
+        """Sends the off command to the address of the passed in Switch"""
+        requests.get(isy_rest_address+'/nodes/'+switch.address+'/cmd/DOF/',auth=(isy_admin,isy_pwd))
+        if switch.slave:
+                light_off(switch.slave)
+                
+def light_on(switch):
+        """Sends the on command to the address of the passed in Switch"""
+        requests.get(isy_rest_address+'/nodes/'+switch.address+'/cmd/DON/',auth=(isy_admin,isy_pwd))
+        if switch.slave:
+                light_on(switch.slave)
+
+def get_status(switch):
+        """Returns the formatted status from ISY of the Switch passed in"""
+	nodeXml = requests.get(isy_rest_address+'nodes/'+switch.address,auth=(isy_admin,isy_pwd))	
+	nodeData = ElementTree.fromstring(nodeXml.content)
+	for prop in nodeData.findall('properties'):
+		return prop[2].attrib['formatted']
+
 def get_nodes(group):
-        """Return a list of switchObj objects
+        """Return a list of Switch objects
 
         Argument:
-        group -- the name as listed in definitions.py of the group of switches"""
+        group -- the name of the group of switches as listed in .html templates of the group of switches"""
         
         # UPDATE ME
         # Update the text between single quotes to the group names used in your .html
@@ -95,26 +113,6 @@ def get_nodes(group):
                 return definitions.OUTSIDE
         else:
                 return None
-
-def light_off(switch):
-        """Sends the off command to the address of the passed in switchObj"""
-        requests.get(isy_rest_address+'/nodes/'+switch.address+'/cmd/DOF/',auth=(isy_admin,isy_pwd))
-        if switch.slave:
-                light_off(switch.slave)
-                
-def light_on(switch):
-        """Sends the on command to the address of the passed in switchObj"""
-        requests.get(isy_rest_address+'/nodes/'+switch.address+'/cmd/DON/',auth=(isy_admin,isy_pwd))
-        if switch.slave:
-                light_on(switch.slave)
-
-def get_status(switch):
-        """Returns the formatted status from ISY of the switchObj passed in"""
-	nodeXml = requests.get(isy_rest_address+'nodes/'+switch.address,auth=(isy_admin,isy_pwd))	
-	nodeData = ElementTree.fromstring(nodeXml.content)
-	for prop in nodeData.findall('properties'):
-		return prop[2].attrib['formatted']
-        
 
 if __name__ == '__main__':
 	app.run(debug=True,host='0.0.0.0')
