@@ -1,0 +1,54 @@
+<html>
+
+	<head>
+		<title>Corum ISY - Dashboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	</head>
+
+	<body>
+		<h1><center>/ <a href="/isy/">isy</a> / Outside</center></h1>
+		<table cellpadding="5" align="center">
+			<tr>
+				<td><b>Front Porch</b></td>
+				<td><a href="/isy/outside/FrontPorch/toggle/">
+					{% if status.FrontPorch == 'On' %}
+						<img src="/static/switch-on.png"
+					{% else %}
+						<img src="/static/switch-off.png"
+					{% endif %}
+					style="width: 100px;height=100px;">
+				</a></td>
+			</tr>
+			<tr>
+				<td><b>Garage</b></td>
+				<td><a href="/isy/outside/GarageOutdoor/toggle/">
+					{% if status.GarageOutdoor == 'On' %}
+						<img src="/static/switch-on.png"
+					{% else %}
+						<img src="/static/switch-off.png"
+					{% endif %}
+					style="width: 100px;height=100px;">
+				</a></td>
+			</tr>
+			<tr>
+				<td><b>Light Post</b></td>
+				<td><a href="/isy/outside/LightPost/toggle/">
+					{% if status.LightPost == 'On' %}
+						<img src="/static/switch-on.png"
+					{% else %}
+						<img src="/static/switch-off.png"
+					{% endif %}
+					style="width: 100px;height=100px;">
+				</a></td>
+			</tr>
+			<tr>
+				<th colspan="2"><a href="/isy/outside/all_on/">All On</a></th>
+			</tr>
+			<tr>
+				<th colspan="2"><a href="/isy/outside/all_off/">All Off</a></th>
+			</tr>
+		</table>
+
+	</body>
+
+</html>

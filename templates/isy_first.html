@@ -1,0 +1,54 @@
+<html>
+
+	<head>
+		<title>Corum ISY - Dashboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	</head>
+
+	<body>
+		<h1><center>/ <a href="/isy/">isy</a> / First Floor</center></h1>
+		<table cellpadding="5" align="center">
+			<tr>
+				<td><b>Dining Room</b></td>
+				<td><a href="/isy/first/DiningRoom/toggle/">
+					{% if status.DiningRoom == 'On' %}
+						<img src="/static/switch-on.png"
+					{% else %}
+						<img src="/static/switch-off.png"
+					{% endif %}
+					style="width: 100px;height=100px;">
+				</a></td>
+			</tr>
+			<tr>
+				<td><b>Kitchen</b></td>
+				<td><a href="/isy/first/Kitchen/toggle/">
+					{% if status.Kitchen == 'On' %}
+						<img src="/static/switch-on.png"
+					{% else %}
+						<img src="/static/switch-off.png"
+					{% endif %}
+					style="width: 100px;height=100px;">
+				</a></td>
+			</tr>
+			<tr>
+				<td><b>Living Room</b></td>
+				<td><a href="/isy/first/LivingRoom/toggle/">
+					{% if status.LivingRoom == 'On' %}
+						<img src="/static/switch-on.png"
+					{% else %}
+						<img src="/static/switch-off.png"
+					{% endif %}
+					style="width: 100px;height=100px;">
+				</a></td>
+			</tr>
+			<tr>
+				<th colspan="2"><a href="/isy/first/all_on/">All On</a></th>
+			</tr>
+			<tr>
+				<th colspan="2"><a href="/isy/first/all_off/">All Off</a></th>
+			</tr>
+		</table>
+
+	</body>
+
+</html>
