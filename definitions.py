@@ -1,3 +1,11 @@
+# switchObj class is used to define switches
+# address is a string and must be formatted properly: 'XX XX XX X'
+#    single switches will always end with 1
+#    do not include a leading 0 in a pair of characters
+#    example: address 123405 would be 12 34 5 1 - note the trailing 1 for a single switch
+# name is a string and must match the names in your .html files in the /templates directory
+# slave is a Switch object and is only used if the switch has slave switches
+#    this is used for three- or more way switches
 class switchObj:
     address = ''
     name = ''
@@ -25,7 +33,7 @@ ISYADDRESS = 'http://10.0.0.1/rest/'
 ISYADMIN = 'admin'
 ISYPASSWORD = 'password'
 
+# Use the python variable names from above and include them in the proper
+# group (Python list) below.
 FIRST_FLOOR = [kitchen, diningRoom, livingRoom]
 OUTSIDE = [frontPorch, garageOutdoor, lightPost]
-
-
