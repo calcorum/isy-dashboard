@@ -24,6 +24,7 @@ lightPost = switchObj('LightPost','38 F 84 1')
 ISYADDRESS = 'http://10.0.0.1/rest/'
 ISYADMIN = 'admin'
 ISYPASSWORD = 'password'
+
 FIRST_FLOOR = [kitchen, diningRoom, livingRoom]
 OUTSIDE = [frontPorch, garageOutdoor, lightPost]
 
