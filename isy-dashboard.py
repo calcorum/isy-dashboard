@@ -85,6 +85,10 @@ def get_nodes(group):
 
         Argument:
         group -- the name as listed in definitions.py of the group of switches"""
+        
+        # UPDATE ME
+        # Update the text between single quotes to the group names used in your .html
+        # Update the name following "definitions." to the name of the group in your definitions.py file
         if group == 'first':
                 return definitions.FIRST_FLOOR
         elif group == 'outside':
