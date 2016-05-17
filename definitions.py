@@ -21,9 +21,9 @@ frontPorch = switchObj('FrontPorch','38 A0 AA 1')
 garageOutdoor = switchObj('GarageOutdoor','38 9E 37 1')
 lightPost = switchObj('LightPost','38 F 84 1')
 
-ISYADDRESS = 'http://10.0.0.240/rest/'
+ISYADDRESS = 'http://10.0.0.1/rest/'
 ISYADMIN = 'admin'
-ISYPASSWORD = 'Share91!'
+ISYPASSWORD = 'password'
 FIRST_FLOOR = [kitchen, diningRoom, livingRoom]
 OUTSIDE = [frontPorch, garageOutdoor, lightPost]
 
