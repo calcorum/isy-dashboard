@@ -46,6 +46,7 @@ The definitions.py file is essentially your settings file, but it is written in 
 6. Define each group you decided on earlier using the following format:
    * Enter an ALL_CAPS name without spaces (use an underscore _ if you want a space)
    * Enter each switch's python name (defined in step 2 above) separated by a comma with brackets [ ] surrounding the whole group
+
 ![Group Definitions](http://i.imgur.com/ZynItzc.png "Group Definition Reference")
 
 ## 3. Update isy-dashboard.py
