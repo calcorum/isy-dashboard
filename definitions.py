@@ -1,4 +1,4 @@
-# switchObj class is used to define switches
+# Switch class is used to define switches
 # address is a string and must be formatted properly: 'XX XX XX X'
 #    single switches will always end with 1
 #    do not include a leading 0 in a pair of characters
@@ -6,7 +6,7 @@
 # name is a string and must match the names in your .html files in the /templates directory
 # slave is a Switch object and is only used if the switch has slave switches
 #    this is used for three- or more way switches
-class switchObj:
+class Switch:
     address = ''
     name = ''
     slave = None
@@ -20,14 +20,14 @@ class switchObj:
         self.slave = slave
 
 # First Floor Switches
-kitchen = switchObj('Kitchen','38 1C 89 1',switchObj('Kitchen','38 18 E0 1'))
-diningRoom = switchObj('DiningRoom','38 27 D9 1',switchObj('DiningRoom','38 1F 74 1'))
-livingRoom = switchObj('LivingRoom','38 F 43 1',switchObj('LivingRoom','38 18 F2 1'))
+kitchen = Switch('Kitchen','38 1C 89 1',Switch('Kitchen','38 18 E0 1'))
+diningRoom = Switch('DiningRoom','38 27 D9 1',Switch('DiningRoom','38 1F 74 1'))
+livingRoom = Switch('LivingRoom','38 F 43 1',Switch('LivingRoom','38 18 F2 1'))
 
 # Outside Switches
-frontPorch = switchObj('FrontPorch','38 A0 AA 1')
-garageOutdoor = switchObj('GarageOutdoor','38 9E 37 1')
-lightPost = switchObj('LightPost','38 F 84 1')
+frontPorch = Switch('FrontPorch','38 A0 AA 1')
+garageOutdoor = Switch('GarageOutdoor','38 9E 37 1')
+lightPost = Switch('LightPost','38 F 84 1')
 
 ISYADDRESS = 'http://10.0.0.1/rest/'
 ISYADMIN = 'admin'
