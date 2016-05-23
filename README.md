@@ -38,7 +38,7 @@ The definitions.py file is essentially your settings file, but it is written in 
   3. Enter the address of the switch from ISY - remember to exclude leading 0s
   4. If the switch has a slave, repeat these instructions as in the "livingroom" example below
   5. Though not pictured here, you may nest as many slaves as you would like.
-![Switch Object](http://i.imgur.com/D4wHJwo.png "Switch Object Reference")
+![Switch Object](http://i.imgur.com/w8VWgwS.png "Switch Object Reference")
 
 3. In the line that starts with "ISYADDRESS", change "10.0.0.1" to the IP address of your ISY and do not change any other text in that line
 4. In the line that starts with "ISYADMIN", update the quoted word to your admin username. Remember to leave the single quotes around it!
