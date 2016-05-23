@@ -70,7 +70,7 @@ This part is quick - you don't need to touch much here. This is the actual web s
 The .html files are what will display in your web browser when you access the isy-dashboard. This can be customized to your liking, but I will cover the basics to get it running.
 
 1. The package comes with three .html files in the /templates directory - these should be renamed to match your environment
-  1. Each file should be named "isy_<group name>.html" - the group name comes from your definitions.py file and is in single quotes directly after 'Switch('
+  1. Each file should be named "isy_``<group name>``.html" - the group name comes from your definitions.py file and is in single quotes directly after 'Switch('
   2. The group name is case sensitive and must match definitions.py exactly
 2. In each group's .html file, make the following changes:
   1. Update the diplay name between the '<b>' and '</b>' to the name you want to show on the web page 
