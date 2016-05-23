@@ -46,6 +46,7 @@ The definitions.py file is essentially your settings file, but it is written in 
 6. Define each group you decided on earlier using the following format:
    * Enter an ALL_CAPS name without spaces (use an underscore _ if you want a space)
    * Enter each switch's python name (defined in step 2 above) separated by a comma with brackets [ ] surrounding the whole group
+7. If you have not already done so, rename this file so it is just 'definitions.py' without quotes
 
 ![Group Definitions](http://i.imgur.com/ZynItzc.png "Group Definition Reference")
 
@@ -63,6 +64,16 @@ This part is quick - you don't need to touch much here. This is the actual web s
 5. If you have more than two groups, copy the two lines starting with "elif group" and insert them above the line starting with "else". 
   1. You should always include the "else" line
 ![isy-dashboard Update](http://i.imgur.com/7fRDA6x.png "isy-dashboard.py Update")
+6. If you have not already done so, rename this file so it is just 'isy-dashboard.py' without quotes
 
 ## 4. Update your .html files
-I will add these instructions as soon as possible. I hope nobody actually sees this message and I'm able to finish before anyone needs them.
+The .html files are what will display in your web browser when you access the isy-dashboard. This can be customized to your liking, but I will cover the basics to get it running.
+
+1. The package comes with three .html files in the /templates directory - these should be renamed to match your environment
+  1. Each file should be named "isy_<group name>.html" - the group name comes from your definitions.py file and is in single quotes directly after 'Switch('
+  2. The group name is case sensitive and must match definitions.py exactly
+2. In each group's .html file, make the following changes:
+  1. Update the diplay name between the '<b>' and '</b>' to the name you want to show on the web page 
+  2. Update the group name directly following '/isy/' to the name of the group .html file
+  3. Update the switch name following the group name just updated
+![HTML Template Updates](http://i.imgur.com/WBpXle5.png "HTML Template Updates")
