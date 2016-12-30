@@ -9,14 +9,6 @@ isy_admin = definitions.ISYADMIN
 isy_pwd = definitions.ISYPASSWORD
 sleep = .25
 
-'''
-@app.before_request
-def limit_remote_addr():
-	if '10.0.0.' not in request.remote_addr:
-                if '10.10.0.' not in request.remote_addr:
-                        abort(404)
-'''
-
 @app.route('/')
 @app.route('/index/')
 def index():
